@@ -1,0 +1,10 @@
+baseURL = 'https://avlonjune7.github.io/github-trending-daily/'
+languageCode = 'zh-CN'
+defaultContentLanguage = 'zh'
+title = '开源雷达'
+hasCJKLanguage = true
+enableRobotsTXT = true
+[params]
+ description = 'GitHub 热榜中文精选 · 记录值得关注的开源项目'
+[markup.goldmark.renderer]
+ unsafe = false
