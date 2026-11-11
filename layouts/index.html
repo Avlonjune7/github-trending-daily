@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{ $issues := (where site.RegularPages "Section" "daily").ByDate.Reverse }}
+{{ range first 1 $issues }}
+  {{ partial "issue.html" (dict "page" . "context" $) }}
+{{ else }}
+  <section class="hero"><h1>GitHub 热榜日报</h1></section>
+  {{ partial "nav.html" . }}
+  <section class="empty"><h2>日榜尚未收录</h2><p>有已核实的数据后，将在这里展示。</p></section>
+{{ end }}
+{{ end }}

@@ -1,26 +1,31 @@
 # 开源雷达 · Hugo
 
-中文 GitHub Trending 日报、周榜与月榜，纯静态输出，无 Node.js、数据库或运行时服务器依赖。
+中文 GitHub Trending 日榜、周榜、月榜与精选阅读，原生 Hugo 静态站。
 
 ## 本地运行
 
 安装 Hugo 0.147.9 或兼容版本，执行 `hugo server`。生产构建：`hugo --minify`，产物在 `public/`。
 
-## 更新一期
+## 交给 AI 更新内容
 
-1. 核实真实 Trending 数据和采集时间，公开资料才可提交。
-2. 按 `data/issues/daily-2026-11-10.json` 格式准备 JSON，保存到 `data/issues/`。
-3. 执行 `python3 scripts/import_issue.py data/issues/<期次>.json`。
-4. 执行 `hugo --minify`，检查本期页与来源，提交 JSON 与 Markdown。
+先阅读 [AGENTS.md](AGENTS.md) 与 [每日更新规则](UPDATE_WORKFLOW.md)，后者末尾包含可直接复制的任务提示词。
 
-少于15项如实注明，不用旧期刊凑数；抓取失败不生成冒充成功的数据。GitHub Actions 负责构建与发布，不自动采集或编造内容。
+- 从 2026-11-12 起，日榜固定取官方前 10 名；跨日期不去重，核实不足 10 名暂停发布。
+- 默认只写本期 `data/issues/daily-YYYY-MM-DD.json`，再由 `scripts/import_issue.py` 生成对应 Markdown。
+- 分类可扩展；列表摘要和弹窗概况分开，四块介绍按官方资料核实。
+- **不得修改布局、样式、交互、脚本、配置或设计规范。** 规则文档不是 GitHub 权限隔离，仍需审查提交范围。
+- 提交前完成生成器校验、Hugo 构建与差异检查。提交、推送和发布需要任务明确授权。
 
-## GitHub Pages
+```bash
+python3 scripts/import_issue.py data/issues/daily-YYYY-MM-DD.json
+hugo --minify
+git diff --check
+```
 
-仓库：https://github.com/Avlonjune7/github-trending-daily
+## 页面与发布
 
-预期站点：https://avlonjune7.github.io/github-trending-daily/ （需 Pages 部署成功后可访问）。
+首页展示最新日榜；旧期保留在归档。精选阅读独立展示阮一峰周刊与 HelloGitHub。
 
-在 Settings → Pages 选择 GitHub Actions。推送 main 后工作流发布。本站不需要任何私有 API Key。
+[GitHub Pages 站点](https://avlonjune7.github.io/github-trending-daily/)
 
-目前收录2026-11-10已核实日榜11项，周/月栏目为空。历史数据不是实时榜单。部署、持续更新在实际验证之前不得宣称成功。
+推送 `main` 后，现有 GitHub Actions 构建并发布。Actions 不负责自动采集；每日任务需要另行安排。发布完成以对应提交工作流和线上回读为准。

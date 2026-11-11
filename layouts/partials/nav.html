@@ -1,1 +1,9 @@
-<nav aria-label="榜单周期"><a href="{{ "daily/" | relURL }}">日榜</a><a href="{{ "weekly/" | relURL }}">周榜</a><a href="{{ "monthly/" | relURL }}">月榜</a><a href="{{ site.Home.RelPermalink }}">全部归档</a></nav>
+<nav class="period-nav" aria-label="内容导航">
+  <a href="{{ site.Home.RelPermalink }}" {{ if or .IsHome (eq .Section "daily") }}aria-current="page"{{ end }}>日榜</a>
+  {{ $current := .Section }}
+  {{ range slice (dict "path" "weekly" "label" "周榜") (dict "path" "monthly" "label" "月榜") }}
+  <a href="{{ printf "%s/" .path | relURL }}" {{ if eq $current .path }}aria-current="page"{{ end }}>{{ .label }}</a>
+  {{ end }}
+  <a href="{{ "reading/" | relURL }}" {{ if eq .Section "reading" }}aria-current="page"{{ end }}>精选阅读</a>
+  <a href="{{ "archives/" | relURL }}" {{ if eq .Section "archives" }}aria-current="page"{{ end }}>全部归档</a>
+</nav>

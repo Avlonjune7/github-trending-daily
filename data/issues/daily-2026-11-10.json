@@ -10,86 +10,176 @@
     {
       "repo": "anthropics/skills",
       "title": "可复用的 AI 任务技能库",
-      "category": "AI",
+      "category": "开发工具",
       "language": "Python",
       "stars": 1038,
       "rank": 1,
-      "features": "把说明、脚本和资源组织为技能，覆盖文档、设计和开发。",
-      "deployment": "按官方说明安装所需技能，适用于支持技能的 AI 工具。",
-      "reason": "适合统一项目检查与文档产出；流程可复用。",
-      "caution": "注意脚本权限、外部调用及规则冲突，建议从少量相关技能开始。",
+      "features": "以技能文件组织任务说明、脚本和资源，让 AI 按固定流程完成工作。",
+      "deployment": "选择与宿主支持方式匹配的插件或技能安装入口，先阅读对应 SKILL.md 和脚本依赖。按需安装少量技能，再用一个实际任务确认是否正确触发。",
+      "reason": "适合把重复的文档整理或项目检查流程交给 AI。比如固定报告结构和检查步骤，让不同会话按相同要求产出，再由人工核对结果。",
+      "caution": "官方将其定位为示例与教育资料，不能把安装技能当作结果保证。执行其中脚本前需检查权限、依赖与输入，关键任务仍应独立验证。",
       "url": "https://github.com/anthropics/skills",
-      "isNew": false
+      "isNew": false,
+      "metrics": {
+        "totalStars": 191408,
+        "forks": 22471,
+        "gained": 1038,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "这是 Anthropic 发布的技能示例仓库。每项技能以独立目录组织说明、脚本和配套资源，帮助 Claude 在文档制作、设计、开发和业务任务中复用步骤。它既能作为现成技能的来源，也适合研究如何把团队流程写成可供模型读取、按任务加载的操作说明。",
+      "contentSources": [
+        {
+          "url": "https://github.com/anthropics/skills/blob/main/README.md",
+          "sha": "4171c2c9eba15bf2bdefb496d941ba559368438b"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "meta/astryx",
       "title": "React 设计系统与组件库",
-      "category": "前端",
+      "category": "前端与设计",
       "language": "TypeScript",
       "stars": 3278,
       "rank": 2,
-      "features": "提供组件、主题、深色模式和 CLI，也支持导出组件源码。",
-      "deployment": "面向 React 19+，使用预构建 CSS。",
-      "reason": "适合后台界面与统一视觉设计，可先局部引入。",
-      "caution": "不是 Vue 组件库；部分图表包为 canary，替换现有体系前需验证兼容性。",
+      "features": "面向 React 的组件与主题系统，帮助统一产品界面和交互。",
+      "deployment": "需要 React 19 或更高版本。按官方入门安装核心包、主题及其依赖，导入预构建 CSS，再使用组件；已有项目可从单个页面接入，不必直接替换全站。",
+      "reason": "适合希望统一多个管理页面的 React 团队。例如先把新增的用户管理页做成统一表格与表单，再评估主题和交互是否适合其他页面。",
+      "caution": "目前为 Beta，图表相关包仍有仅提供 canary 的情况。它不是 Vue 组件库；接入前需检查 React 版本、组件接口与发布状态。",
       "url": "https://github.com/meta/astryx",
-      "isNew": false
+      "isNew": false,
+      "metrics": {
+        "totalStars": 20854,
+        "forks": 1583,
+        "gained": 3278,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "Astryx 是面向 React 的开源设计系统，将界面组件、品牌主题、深色模式、页面模板和 CLI 放在同一套工具中。开发者可以使用带类型定义的组件与预构建 CSS，减少从零设计表单、导航和数据页面的工作，也能让团队与 AI 助手依据同一套组件文档协作。",
+      "contentSources": [
+        {
+          "url": "https://github.com/meta/astryx/blob/main/README.md",
+          "sha": "29b89543395d69bd2a5385a9e768ec9bd9015f73"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "sherlock-project/sherlock",
       "title": "公开用户名足迹查询",
-      "category": "网络",
+      "category": "安全与隐私",
       "language": "Python",
       "stars": 4267,
       "rank": 3,
-      "features": "批量查询多个站点是否存在指定用户名，导出 CSV、XLSX。",
-      "deployment": "可使用 pipx、uv、pip 或 Docker。",
-      "reason": "适合检查自己的公开账号和品牌名称占用。",
-      "caution": "同名不等于同一个人，查询结果须人工核实，不可当作身份确认。",
+      "features": "按用户名查询多个公开站点上的账号线索并导出结果。",
+      "deployment": "可按官方说明使用 pipx、uv、pip 或 Docker 安装。运行时输入用户名，按需要限定站点或输出格式，并对找到的链接逐一检查实际页面。",
+      "reason": "适合核查自己的公开账号足迹或品牌名称占用。例如列出长期使用的用户名在哪些平台出现，再人工确认哪些是自己的账户。",
+      "caution": "站点响应、限制与页面变化可能影响结果，不能把匹配记录当作身份认定。部分系统发行包由社区维护，官方提醒个别版本存在问题。",
       "url": "https://github.com/sherlock-project/sherlock",
-      "isNew": false
+      "isNew": false,
+      "metrics": {
+        "totalStars": 107740,
+        "forks": 12459,
+        "gained": 4267,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "Sherlock 是面向公开账号发现的命令行工具。用户提供一个或多个用户名后，它会检查支持的网站并汇总候选账号地址，提供文本、CSV 等输出方式。它适合整理分散的公开线索，但用户名匹配只意味着站点存在相同名称，不能直接确认账号属于同一个人。",
+      "contentSources": [
+        {
+          "url": "https://github.com/sherlock-project/sherlock/blob/master/docs/README.md",
+          "sha": "ddad6e0214cfa14bfabab0d67bf52293f5d2990e"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "google-deepmind/mujoco",
       "title": "机器人与多关节物理仿真",
-      "category": "AI",
+      "category": "科学计算",
       "language": "C++",
       "stars": 574,
       "rank": 4,
-      "features": "模拟多关节运动和接触，提供控制、模型编辑和强化学习相关工具。",
-      "deployment": "有主流桌面系统预编译版本、Python 包和浏览器体验。",
-      "reason": "适合具身智能研究和控制实验，教学资料丰富。",
-      "caution": "正式实验应固定版本，仿真和浏览器演示不代表现实机器人效果。",
+      "features": "用于机器人、接触动力学与控制研究的物理仿真引擎。",
+      "deployment": "可先在官方浏览器演示中体验，再按系统下载预编译版本或安装 Python 包。准备模型后，用查看器观察运动和接触结果，再逐步接入自己的实验程序。",
+      "reason": "适合机器人课程、控制算法和强化学习实验。例如在仿真中比较机械臂控制方案，先观察模型与接触参数的影响，再考虑真实设备验证。",
+      "caution": "仿真结果取决于模型与参数，不等于真实机器人表现。官方提示主分支可能不稳定；正式实验宜固定版本，并核对系统与 Python 支持要求。",
       "url": "https://github.com/google-deepmind/mujoco",
-      "isNew": false
+      "isNew": false,
+      "metrics": {
+        "totalStars": 17053,
+        "forks": 2010,
+        "gained": 574,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "MuJoCo 是模拟多关节系统与接触行为的通用物理引擎，面向机器人、生物力学、图形与机器学习研究。它包含模型编译、物理计算和交互可视化，并提供 Python 绑定，让研究者能够在可控的仿真环境中观察系统运动、测试控制策略和开展实验。",
+      "contentSources": [
+        {
+          "url": "https://github.com/google-deepmind/mujoco/blob/main/README.md",
+          "sha": "c6fb8355165ddd1477109a96d3aace4e6f9cd17b"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "anthropics/claude-quickstarts",
       "title": "官方 AI 应用参考实现",
-      "category": "AI",
+      "category": "AI 与智能体",
       "language": "Python",
       "stars": 551,
       "rank": 5,
-      "features": "包含数据分析和 Computer Use 等示例，展示工具调用与上下文管理。",
-      "deployment": "需要 Claude API Key；按子项目配置依赖，部分示例用容器。",
-      "reason": "适合快速原型与阅读实际工程实现。",
-      "caution": "有 API 成本；演示与生产安全要求不同，电脑控制请在隔离环境测试。",
+      "features": "通过官方示例了解如何构建 Claude 应用与工具调用流程。",
+      "deployment": "需要 Claude API Key，并按选定子项目的 README 准备环境。先运行一个最贴近需求的示例；桌面操作示例可能需要容器或隔离的桌面环境。",
+      "reason": "适合验证 AI 应用原型。例如计划做知识库客服时，先研究客服示例如何组织对话与知识访问，再替换为自己的业务数据和权限边界。",
+      "caution": "不同示例的依赖、运行方式和成熟度不同，不能作为统一生产模板。API 调用可能产生费用，电脑操作示例应在隔离环境中试用。",
       "url": "https://github.com/anthropics/claude-quickstarts",
-      "isNew": false
+      "isNew": false,
+      "metrics": {
+        "totalStars": 20159,
+        "forks": 3326,
+        "gained": 551,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "Claude Quickstarts 汇集客服、数据分析、浏览器操作和电脑操作等参考应用，展示模型如何结合界面、知识或外部工具完成任务。它提供可阅读、可修改的起点，方便开发者理解应用结构与调用链，而不是只看一个孤立的 API 请求示例。",
+      "contentSources": [
+        {
+          "url": "https://github.com/anthropics/claude-quickstarts/blob/main/README.md",
+          "sha": "2697536d46ea6ef6bd1cdd9bdedb463d358c7139"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "garrytan/gbrain",
       "title": "不同 AI 工具共享长期记忆",
-      "category": "AI",
+      "category": "AI 与智能体",
       "language": "TypeScript",
       "stars": 216,
       "rank": 6,
-      "features": "带来源的事实记录、关键词与语义检索、知识关系和引用回答，可提示过时或矛盾信息。",
-      "deployment": "MIT，可自托管；要求 Bun 1.4.4+。可从 PGlite 与关键词检索开始。",
-      "reason": "适合长期项目与跨 AI 工具交接，先本地小规模使用再扩展。",
-      "caution": "npm 同名 gbrain 包与本项目无关。语义检索等可能发送数据到模型服务并收费；Markdown 导出不是完整备份。",
+      "features": "为不同 AI 工具提供可追溯、可更正的共享记忆。",
+      "deployment": "当前 README 要求 Bun 1.4.4 或更高版本。选择与现有客户端匹配的接入指南，先配置本地基础记忆，再评估是否需要 MCP 远程访问或额外模型服务。",
+      "reason": "适合长期项目与跨工具协作。例如将已确认的需求、决策和来源保存下来，让后续会话检索这些事实，并能在结论变化时明确更正。",
+      "caution": "远程授权与直接访问本地文件、数据库是不同边界，不能只靠分类标签隔离敏感内容。语义搜索或后台增强可能需要额外模型与运行成本。",
       "url": "https://github.com/garrytan/gbrain",
-      "isNew": true
+      "isNew": true,
+      "metrics": {
+        "totalStars": 32308,
+        "forks": 4780,
+        "gained": 216,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "GBrain 把事实、来源和相关知识保存为可由多个智能体访问的记忆系统，支持检索、纠正与撤回。基础使用可以从不配置模型密钥的记忆和关键词检索开始，再按需要增加语义搜索与综合回答，解决不同工具和会话之间重复交代背景的问题。",
+      "contentSources": [
+        {
+          "url": "https://github.com/garrytan/gbrain/blob/master/README.md",
+          "sha": "76077dd6668ee6f5dead0b1ace33071eba26a965"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "vercel-labs/agent-browser",
@@ -98,68 +188,144 @@
       "language": "Rust",
       "stars": 916,
       "rank": 7,
-      "features": "利用页面快照定位元素并点击、输入，也支持常见选择器。",
-      "deployment": "可经 npm 或 Homebrew 安装，再配置浏览器。",
-      "reason": "适合后台表单操作和交互回归，补足编译检查。",
-      "caution": "页面结构改变后应重新抓取快照；交互测试不能替代视觉验收。",
+      "features": "让 AI 通过命令行读取网页结构并执行浏览器操作。",
+      "deployment": "按官方说明通过 npm 或 Homebrew 安装，并下载浏览器；Linux 可能还需系统依赖。打开页面后先获取快照，根据当前元素引用操作，再重新读取页面确认结果。",
+      "reason": "适合开发者检查网页流程或验证表单交互。例如在测试环境完成登录、筛选与提交，再回读页面确认状态，补足仅靠构建无法发现的问题。",
+      "caution": "页面导航或 DOM 变化后需要刷新快照，旧引用不能一直复用。操作会影响真实浏览器会话，涉及提交或删除时应使用测试环境并确认权限。",
       "url": "https://github.com/vercel-labs/agent-browser",
-      "isNew": false
+      "isNew": false,
+      "metrics": {
+        "totalStars": 48715,
+        "forks": 3319,
+        "gained": 916,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "agent-browser 是面向 AI 智能体的浏览器自动化 CLI。它把页面转换成带元素引用的可访问性快照，让模型先读取结构，再按引用点击、输入或查询结果。浏览器可在连续命令之间保持会话，适合把网页操作拆成可观察、可核对的小步骤。",
+      "contentSources": [
+        {
+          "url": "https://github.com/vercel-labs/agent-browser/blob/main/README.md",
+          "sha": "53f71fd42a568994479edfa5063c58ca0b5dad8d"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "ruvnet/RuView",
       "title": "用 Wi-Fi 信号研究空间感知",
-      "category": "网络",
+      "category": "物联网与感知",
       "language": "Rust",
       "stars": 172,
       "rank": 8,
-      "features": "研究存在、运动和空间状态感知，包含呼吸与姿态等实验。",
-      "deployment": "高级能力依赖 CSI 采集硬件；Docker 演示用模拟数据，普通笔记本 RSSI 只能做粗略检测。",
-      "reason": "适合无线网络、边缘计算和智能家居实验。",
-      "caution": "部分姿态演示结合摄像头，纯 CSI 模型仍早期。不是医疗、应急或安全产品，部署需考虑隐私与同意。",
+      "features": "研究通过 Wi-Fi 等无线信号识别空间状态与人体活动。",
+      "deployment": "先阅读官方用户指南，选择演示或硬件路径。真实 CSI 实验需要兼容的采集节点及配置，再按对应固件和模型说明建立采集、处理与可视化链路。",
+      "reason": "适合无线感知、物联网和智能家居研究。例如先验证特定房间的存在检测，再记录数据评估环境变化对结果的影响，不应直接把演示当成成品。",
+      "caution": "部分模型和指标仍有实验或合成数据边界，README 也披露了未达目标的路径。不能据此保证实际姿态或生命体征准确度，需在目标硬件上独立验证。",
       "url": "https://github.com/ruvnet/RuView",
-      "isNew": true
+      "isNew": true,
+      "metrics": {
+        "totalStars": 103661,
+        "forks": 13427,
+        "gained": 172,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "RuView 将无线信号采集、模型处理和空间状态展示组织成感知实验工具，涉及存在检测、运动与姿态等方向，并提供硬件、模型和智能家居集成入口。它的价值在于探索摄像头之外的感知方式，但不同实验能力需要区分真实硬件采集、模拟演示与模型验证程度。",
+      "contentSources": [
+        {
+          "url": "https://github.com/ruvnet/RuView/blob/main/README.md",
+          "sha": "98c12d7458694f70bfc68634638ca88429026f7f"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "ZhuLinsen/daily_stock_analysis",
       "title": "自托管 AI 行情研究工作流",
-      "category": "自托管",
+      "category": "金融工具",
       "language": "Python",
       "stars": 506,
       "rank": 9,
-      "features": "聚合行情、新闻和指标，生成报告，支持工作台、历史记录、定时任务与通知。",
-      "deployment": "支持 GitHub Actions、Python、Docker、FastAPI；本地或 Docker 可接 Ollama。",
-      "reason": "值得研究数据采集 → AI 分析 → 报告推送的完整工程链路。",
-      "caution": "免费额度不等于零成本；数据延迟和模型幻觉会影响结论，不能直接当作投资指令。",
+      "features": "汇集行情与新闻，通过 AI 生成自选股分析并定时推送。",
+      "deployment": "按官方说明选择 GitHub Actions、本地 Python 或 Docker。配置所需数据与模型服务参数以及通知渠道，先对少量自选股运行并检查输入数据和报告输出。",
+      "reason": "适合学习自动化报告与定时通知的开发者。例如建立一个测试观察列表，比较数据更新、失败处理和消息推送是否可靠，再考虑持续运行。",
+      "caution": "报告受行情时效、数据源与模型输出影响，不应视为投资结论。外部 API 可能有限额或费用，配置文件和日志中的密钥需要妥善保护。",
       "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-      "isNew": true
+      "isNew": true,
+      "metrics": {
+        "totalStars": 69234,
+        "forks": 56477,
+        "gained": 506,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "该项目将多市场行情、相关新闻、分析流程与通知渠道串成可部署的工作流。用户可以维护自选股，触发分析并接收仪表盘式结果，也能研究数据采集、模型处理和报告推送如何协同，适合用来观察完整的数据应用工程链路。",
+      "contentSources": [
+        {
+          "url": "https://github.com/ZhuLinsen/daily_stock_analysis/blob/main/README.md",
+          "sha": "cb130e7bd387db4fbd26949ee9f995b95c347134"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "homeassistant-ai/ha-mcp",
       "title": "让 AI 辅助管理 Home Assistant",
-      "category": "自托管",
+      "category": "智能家居",
       "language": "Python",
       "stars": 31,
       "rank": 10,
-      "features": "MCP 实体搜索、设备状态、服务调用、自动化轨迹与日志；支持只读模式和工具开关。",
-      "deployment": "推荐 Home Assistant 内集成，也支持 Docker 或本地 stdio；同一客户端只配置一种路径。",
-      "reason": "适合已有智能家居系统的用户，优先用只读查询和排障。",
-      "caution": "能控制真实设备，需保护令牌并限制可调用工具，不宜直接开放全部管理权限。",
+      "features": "通过 MCP 让 AI 查询 Home Assistant 状态并辅助管理自动化。",
+      "deployment": "先准备可用的 Home Assistant。官方推荐集成方式，也提供外部服务器运行路径；按向导配置连接与凭据，并让每个客户端只连接一种安装方式。",
+      "reason": "适合已有 Home Assistant 系统的用户。例如先查询某个房间的设备状态，结合自动化轨迹定位未触发的原因，再决定是否授权助手修改配置。",
+      "caution": "连接地址和令牌可能赋予设备操作能力，应限制暴露范围。官方明确提醒不要重复配置多个相同服务器入口；文件与 YAML 编辑能力需要额外启用。",
       "url": "https://github.com/homeassistant-ai/ha-mcp",
-      "isNew": true
+      "isNew": true,
+      "metrics": {
+        "totalStars": 6170,
+        "forks": 300,
+        "gained": 31,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "ha-mcp 将 Home Assistant 的设备、实体与自动化能力提供给支持 MCP 的客户端。它让对话式助手能够结合家庭设备状态进行查询、排障或操作，并提供工具配置与访问方式选择，使现有智能家居系统可以接入 AI 工作流，而无需重新建立设备管理平台。",
+      "contentSources": [
+        {
+          "url": "https://github.com/homeassistant-ai/ha-mcp/blob/master/README.md",
+          "sha": "f67672e7f470b0654d57c347c9c83a9060ca46f5"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     },
     {
       "repo": "milind-soni/OpenMausBot",
       "title": "跨工具的 AI 电脑工作台",
-      "category": "AI",
+      "category": "AI 与智能体",
       "language": "TypeScript",
       "stars": 1587,
       "rank": 11,
-      "features": "配置助手会话、模型、电脑和应用，可接入 Claude、Codex、Grok 等 CLI。",
-      "deployment": "提供虚拟机及部分平台主机控制路径，安装需核对平台支持。",
-      "reason": "适合横跨浏览器、桌面、终端的任务，集中管理执行环境。",
-      "caution": "留意虚拟机资源需求、第三方授权和主机控制权限。",
+      "features": "在聊天式桌面工作台中管理多个 AI 助手及其执行环境。",
+      "deployment": "先按平台选择官方安装包，准备要使用的智能体 CLI 与登录配置。为助手选择执行环境和应用连接，先在隔离环境中完成简单任务，再逐步增加权限。",
+      "reason": "适合需要跨终端、浏览器和应用执行任务的用户。例如让不同助手分别整理资料与处理开发工作，在统一界面查看进度，并对关键操作进行确认。",
+      "caution": "桌面安装支持与主机控制支持不是同一回事，部分平台或显示环境仍有限制。云电脑、模型和外部应用可能产生费用，授权前应核实数据与操作范围。",
       "url": "https://github.com/milind-soni/OpenMausBot",
-      "isNew": false
+      "isNew": false,
+      "metrics": {
+        "totalStars": 20074,
+        "forks": 2744,
+        "gained": 1587,
+        "collectedAt": "2026-11-10T06:58:21.039Z",
+        "sourceUrl": "https://githubtrending.today/archive/2026-11-10/"
+      },
+      "overview": "OpenMausBot 将多个助手呈现为聊天联系人，每个助手可以使用不同模型、计算环境和连接的应用。项目以本地智能体 CLI 为基础，把会话、电脑操作和任务审批组织到一个工作台中，方便观察各助手的任务过程并在需要时接管或确认操作。",
+      "contentSources": [
+        {
+          "url": "https://github.com/milind-soni/OpenMausBot/blob/main/README.md",
+          "sha": "f1e61d341a7615ad4caab950adea662eda76ecfe"
+        }
+      ],
+      "contentCheckedAt": "2026-11-11T16:05:25.341944+00:00"
     }
-  ]
+  ],
+  "contentUpdatedAt": "2026-11-11T16:05:25.341944+00:00"
 }

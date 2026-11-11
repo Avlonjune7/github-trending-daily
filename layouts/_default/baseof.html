@@ -1,1 +1,22 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ site.Title }}</title><meta name="description" content="{{ .Description | default site.Params.description }}"><link rel="stylesheet" href="{{ "style.css" | relURL }}"><link rel="alternate" type="application/rss+xml" title="开源雷达 RSS" href="{{ "index.xml" | relURL }}"></head><body><header><a class="brand" href="{{ site.Home.RelPermalink }}"><span class="logo">↗</span> 开源雷达<span class="sub">OPEN SOURCE RADAR</span></a><a class="source" href="https://github.com/trending?since=daily">GitHub Trending ↗</a></header><main>{{ block "main" . }}{{ end }}</main><footer>基于 Hugo 的纯静态站 · 数据是注明时间的快照，不是实时榜单。<a href="{{ "index.xml" | relURL }}">RSS</a></footer><script src="{{ "filter.js" | relURL }}" defer></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
+  <meta name="description" content="{{ .Description | default site.Params.description }}">
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ "style.css" | relURL }}?v={{ readFile "static/style.css" | md5 }}">
+  <link rel="alternate" type="application/rss+xml" title="开源雷达 RSS" href="{{ "index.xml" | relURL }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="开源雷达首页"><span class="logo" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.2"/><path d="M12 12 20 4" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span><span>开源雷达<small>OPEN SOURCE RADAR</small></span></a>
+    <div class="header-links"><a href="{{ "index.xml" | relURL }}">RSS 订阅 <span aria-hidden="true">↗</span></a><a href="https://github.com/trending?since=daily" aria-label="GitHub Trending">GitHub<span class="desktop-label"> Trending</span> <span aria-hidden="true">↗</span></a></div>
+  </div></header>
+  <main id="main">{{ block "main" . }}{{ end }}</main>
+  <footer class="site-footer"><div><strong>开源雷达</strong><span>发现开源，也理解它。</span></div><p>榜单为采集时的快照，非实时排名。<a href="{{ "index.xml" | relURL }}">订阅 RSS ↗</a></p></footer>
+  <script src="{{ "filter.js" | relURL }}?v={{ readFile "static/filter.js" | md5 }}" defer></script>
+</body>
+</html>

@@ -1,1 +1,26 @@
-{{ define "main" }}<section class="hero"><p class="eyebrow">DISCOVER · BUILD · SHARE</p><h1>{{ if .IsHome }}发现值得关注的开源项目{{ else }}{{ .Title }}{{ end }}</h1><p>不止看热度，也看用途、部署方式与使用边界。</p></section>{{ partial "nav.html" . }}<div class="archive">{{ $pages := .RegularPages }}{{ if .IsHome }}{{ $pages = site.RegularPages }}{{ end }}{{ range $pages.ByDate.Reverse }}<a class="issue" href="{{ .RelPermalink }}"><div class="meta">{{ .Date.Format "2006.01.02" }} · {{ .Params.periodLabel }}</div><h2>{{ .Title }}</h2><p>{{ .Params.note }}</p><span class="read">{{ len .Params.projects }} 个项目 · 阅读本期 →</span></a>{{ else }}<section class="empty"><h2>这一期还在路上</h2><p>尚未收录已核实的榜单，不使用旧数据填充。</p></section>{{ end }}</div>{{ end }}
+{{ define "main" }}
+{{ $pages := .RegularPages }}
+{{ if .IsHome }}{{ $pages = where site.RegularPages "Section" "daily" }}{{ else if eq .Section "archives" }}{{ $pages = where site.RegularPages "Section" "in" (slice "daily" "weekly" "monthly") }}{{ end }}
+<section class="hero archive-hero">
+  <div><p class="eyebrow"><span class="status-dot"></span> 独立发现 · 持续记录</p>
+  <h1>{{ if .IsHome }}GitHub 热榜日报{{ else }}{{ .Title }}{{ end }}</h1>
+  <p class="hero-description">不止看热度，也看用途。<br>从 GitHub 热榜出发，发现值得了解的开源项目。</p></div>
+  <div class="hero-aside"><span class="edition-label">THE OPEN SOURCE INDEX</span><p>发现 / 理解 / 构建</p><span class="meta">日榜 · 周榜 · 月榜</span></div>
+</section>
+<div class="section-bar">{{ partial "nav.html" . }}<span class="archive-count">{{ len $pages }} 期收录</span></div>
+<div class="archive">
+{{ range $index, $page := $pages.ByDate.Reverse }}
+  <article class="issue {{ if eq $index 0 }}issue-latest{{ end }}">
+    <div class="issue-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01.02" }}</time><span>{{ .Date.Format "2006" }} / {{ .Params.periodLabel }}</span>{{ if eq $index 0 }}<span class="latest-label">最新收录</span>{{ end }}</div>
+    <div class="issue-content"><div class="meta">{{ len .Params.projects }} 个开源项目 <span class="meta-divider">/</span> {{ .Params.periodLabel }}</div>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p class="issue-preview">{{ range $i, $project := first 3 .Params.projects }}{{ if $i }}<span aria-hidden="true"> · </span>{{ end }}{{ $project.title }}{{ end }}</p>
+      <div class="issue-bottom"><div class="tags">{{ range first 3 .Params.projects }}<span>{{ .repo }}</span>{{ end }}</div><a class="read" href="{{ .RelPermalink }}" aria-label="阅读 {{ .Title }}">阅读本期 <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </article>
+{{ else }}
+  <section class="empty"><span class="empty-mark" aria-hidden="true">—</span><h2>好内容，值得等一等。</h2><p>这里尚未收录榜单。先去日榜发现近期项目吧。</p><a class="button-link" href="{{ site.Home.RelPermalink }}">浏览日榜 <span aria-hidden="true">↗</span></a></section>
+{{ end }}
+</div>
+<div class="archive-note"><span>关于这份记录</span><p>每一期保留采集时间与原始来源。热度是发现的起点，适合你的项目才值得深入。</p></div>
+{{ end }}

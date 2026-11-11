@@ -1,0 +1,24 @@
+[
+  {
+    "publication": "阮一峰 · 科技爱好者周刊",
+    "issue": 418,
+    "date": "2026-11-06",
+    "title": "如果科技停止在21世纪初",
+    "summary": "从科技与生活的关系出发，思考技术进步带来的便利与代价，延伸阅读本期科技见闻、工具和资源。",
+    "tags": ["科技观察", "工具与资源"],
+    "url": "https://github.com/ruanyf/weekly/blob/master/docs/issue-418.md",
+    "source": "https://github.com/ruanyf/weekly",
+    "style": "weekly"
+  },
+  {
+    "publication": "HelloGitHub",
+    "issue": 127,
+    "date": "2026-10-28",
+    "title": "HelloGitHub 第 127 期",
+    "summary": "按编程语言浏览本期推荐的开源项目，从项目介绍中寻找学习素材、实用工具与动手实践的灵感。",
+    "tags": ["开源推荐", "学习与实践"],
+    "url": "https://github.com/521xueweihan/HelloGitHub/blob/master/content/HelloGitHub127.md",
+    "source": "https://github.com/521xueweihan/HelloGitHub",
+    "style": "hellogithub"
+  }
+]

@@ -1,0 +1,1 @@
+Language icons: Devicon (https://github.com/devicons/devicon), MIT license. Shell uses the Bash icon. Brand marks belong to their respective owners.

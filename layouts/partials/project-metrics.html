@@ -1,0 +1,40 @@
+<div class="project-metrics">
+{{ $project := .project }}{{ $page := .page }}
+{{ $metrics := index site.Data.repo_metrics $project.repo }}
+{{ with $project.metrics }}{{ $metrics = dict "totalStars" .totalStars "forks" .forks "collectedAt" .collectedAt }}{{ end }}
+{{ $icons := dict "TypeScript" "typescript" "JavaScript" "javascript" "Python" "python" "C++" "cplusplus" "Ruby" "ruby" "Rust" "rust" "Shell" "bash" }}
+<div class="metric-language" data-label="语言">{{ with index $icons $project.language }}<img class="language-icon" src="{{ printf "icons/languages/%s.svg" . | relURL }}" width="16" height="16" alt="">{{ end }}{{ $project.language }}</div>
+<div class="metric-number" data-label="总 Star">{{ with $metrics }}<span title="{{ lang.FormatNumber 0 .totalStars }} Stars · {{ .collectedAt }}">{{ partial "compact-number.html" .totalStars }}</span>{{ else }}<span class="metric-missing">暂无数据</span>{{ end }}</div>
+<div class="metric-number" data-label="Fork">{{ with $metrics }}<span title="{{ lang.FormatNumber 0 .forks }} Forks · {{ .collectedAt }}">{{ partial "compact-number.html" .forks }}</span>{{ else }}<span class="metric-missing">暂无数据</span>{{ end }}</div>
+{{ $history := slice }}
+{{ range (where site.RegularPages "Section" "daily").ByDate }}
+  {{ if le .Date $page.Date }}
+    {{ $date := .Date.Format "2006-01-02" }}
+    {{ range .Params.projects }}{{ if eq .repo $project.repo }}{{ $history = $history | append (dict "date" $date "stars" (int .stars)) }}{{ end }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ $history = last 7 $history }}
+<div class="metric-trend" data-label="增星趋势">
+{{ if ge (len $history) 2 }}
+  {{ $min := (index $history 0).stars }}{{ $max := $min }}{{ $labels := slice }}
+  {{ range $history }}{{ $min = math.Min $min .stars }}{{ $max = math.Max $max .stars }}{{ $labels = $labels | append (printf "%s：+%d" .date .stars) }}{{ end }}
+  {{ $spread := sub $max $min }}{{ $points := slice }}
+  {{ range $i, $point := $history }}
+    {{ $x := add 4 (mul 92 (div (float $i) (float (sub (len $history) 1)))) }}
+    {{ $y := 18.0 }}{{ if gt $spread 0 }}{{ $y = sub 30 (mul 24 (div (float (sub $point.stars $min)) (float $spread))) }}{{ end }}
+    {{ $points = $points | append (printf "%.1f,%.1f" $x $y) }}
+  {{ end }}
+  <svg viewBox="0 0 100 36" role="img" aria-label="已收录日榜增星：{{ delimit $labels "；" }}"><title>{{ delimit $labels "；" }}。仅连接已收录记录，不代表连续日走势。</title><polyline points="{{ delimit $points " " }}" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  {{ range $points }}{{ $xy := split . "," }}<circle cx="{{ index $xy 0 }}" cy="{{ index $xy 1 }}" r="2.5" fill="currentColor"/>{{ end }}</svg>
+  <small>{{ len $history }} 期记录</small>
+{{ else }}<span class="metric-missing">记录不足</span>{{ end }}
+</div>
+<div class="metric-growth" data-label="增长率">
+{{ with $project.metrics }}
+{{ if and (eq (int .gained) (int $project.stars)) (gt (int .totalStars) (int .gained)) }}
+  <span title="同一期快照：{{ .collectedAt }}；{{ .gained }} ÷（{{ .totalStars }} − {{ .gained }}）">+{{ printf "%.1f" (mul 100 (div (float .gained) (float (sub (int .totalStars) (int .gained))))) }}%</span>
+{{ else }}<span class="metric-missing">暂无数据</span>{{ end }}
+{{ else }}<span class="metric-missing" title="缺少本期总 Star 快照">待同期数据</span>{{ end }}
+</div>
+
+</div>

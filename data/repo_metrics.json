@@ -1,0 +1,146 @@
+{
+  "ZhuLinsen/daily_stock_analysis": {
+    "totalStars": 69932,
+    "forks": 56787,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/42829555?v=4",
+    "ownerLogin": "ZhuLinsen",
+    "ownerType": "User",
+    "collectedAt": "2026-11-11T15:27:52.281919+00:00",
+    "sourceUrl": "https://api.github.com/repos/ZhuLinsen/daily_stock_analysis"
+  },
+  "addyosmani/agent-skills": {
+    "totalStars": 115662,
+    "forks": 12132,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/110953?v=4",
+    "ownerLogin": "addyosmani",
+    "ownerType": "User",
+    "collectedAt": "2026-11-11T15:27:52.264707+00:00",
+    "sourceUrl": "https://api.github.com/repos/addyosmani/agent-skills"
+  },
+  "anthropics/claude-quickstarts": {
+    "totalStars": 20721,
+    "forks": 3482,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/76263028?v=4",
+    "ownerLogin": "anthropics",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:52.333992+00:00",
+    "sourceUrl": "https://api.github.com/repos/anthropics/claude-quickstarts"
+  },
+  "anthropics/skills": {
+    "totalStars": 192894,
+    "forks": 22700,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/76263028?v=4",
+    "ownerLogin": "anthropics",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:52.336302+00:00",
+    "sourceUrl": "https://api.github.com/repos/anthropics/skills"
+  },
+  "garrytan/gbrain": {
+    "totalStars": 32653,
+    "forks": 4866,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/19957?v=4",
+    "ownerLogin": "garrytan",
+    "ownerType": "User",
+    "collectedAt": "2026-11-11T15:27:53.088765+00:00",
+    "sourceUrl": "https://api.github.com/repos/garrytan/gbrain"
+  },
+  "google-deepmind/mujoco": {
+    "totalStars": 17598,
+    "forks": 2162,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/8596759?v=4",
+    "ownerLogin": "google-deepmind",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:53.235096+00:00",
+    "sourceUrl": "https://api.github.com/repos/google-deepmind/mujoco"
+  },
+  "homeassistant-ai/ha-mcp": {
+    "totalStars": 7067,
+    "forks": 446,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/232192432?v=4",
+    "ownerLogin": "homeassistant-ai",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:53.336906+00:00",
+    "sourceUrl": "https://api.github.com/repos/homeassistant-ai/ha-mcp"
+  },
+  "mattpocock/skills": {
+    "totalStars": 321650,
+    "forks": 26966,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/28293365?v=4",
+    "ownerLogin": "mattpocock",
+    "ownerType": "User",
+    "collectedAt": "2026-11-11T15:27:53.177990+00:00",
+    "sourceUrl": "https://api.github.com/repos/mattpocock/skills"
+  },
+  "meta/astryx": {
+    "totalStars": 24423,
+    "forks": 1909,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/69631?v=4",
+    "ownerLogin": "meta",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:54.054197+00:00",
+    "sourceUrl": "https://api.github.com/repos/meta/astryx"
+  },
+  "milind-soni/OpenMausBot": {
+    "totalStars": 21085,
+    "forks": 2939,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/46266943?v=4",
+    "ownerLogin": "milind-soni",
+    "ownerType": "User",
+    "collectedAt": "2026-11-11T15:27:54.071238+00:00",
+    "sourceUrl": "https://api.github.com/repos/milind-soni/OpenMausBot"
+  },
+  "ranxianglei/billion-context": {
+    "totalStars": 6749,
+    "forks": 549,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/12445698?v=4",
+    "ownerLogin": "ranxianglei",
+    "ownerType": "User",
+    "collectedAt": "2026-11-11T15:27:54.210595+00:00",
+    "sourceUrl": "https://api.github.com/repos/ranxianglei/billion-context"
+  },
+  "ruvnet/RuView": {
+    "totalStars": 104009,
+    "forks": 13533,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/2934394?v=4",
+    "ownerLogin": "ruvnet",
+    "ownerType": "User",
+    "collectedAt": "2026-11-11T15:27:54.231509+00:00",
+    "sourceUrl": "https://api.github.com/repos/ruvnet/RuView"
+  },
+  "sherlock-project/sherlock": {
+    "totalStars": 109864,
+    "forks": 12728,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/48293496?v=4",
+    "ownerLogin": "sherlock-project",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:54.822810+00:00",
+    "sourceUrl": "https://api.github.com/repos/sherlock-project/sherlock"
+  },
+  "tokio-rs/topcoat": {
+    "totalStars": 7063,
+    "forks": 315,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/20248544?v=4",
+    "ownerLogin": "tokio-rs",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:55.110886+00:00",
+    "sourceUrl": "https://api.github.com/repos/tokio-rs/topcoat"
+  },
+  "vercel-labs/agent-browser": {
+    "totalStars": 49671,
+    "forks": 3474,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/108547162?v=4",
+    "ownerLogin": "vercel-labs",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:55.411627+00:00",
+    "sourceUrl": "https://api.github.com/repos/vercel-labs/agent-browser"
+  },
+  "we-promise/sure": {
+    "totalStars": 12635,
+    "forks": 937,
+    "avatarUrl": "https://avatars.githubusercontent.com/u/222344567?v=4",
+    "ownerLogin": "we-promise",
+    "ownerType": "Organization",
+    "collectedAt": "2026-11-11T15:27:55.024749+00:00",
+    "sourceUrl": "https://api.github.com/repos/we-promise/sure"
+  }
+}

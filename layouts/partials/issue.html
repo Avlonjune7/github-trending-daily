@@ -1,0 +1,43 @@
+{{ $page := .page }}
+{{ $context := .context }}
+{{ $projects := $page.Params.projects }}
+{{ $languages := slice }}{{ $categories := slice }}{{ $stars := 0 }}
+{{ range $projects }}
+  {{ $languages = $languages | append .language }}{{ $categories = $categories | append .category }}{{ $stars = add $stars (int .stars) }}
+{{ end }}
+{{ $languages = sort (uniq $languages) }}{{ $categories = sort (uniq $categories) }}
+<section class="ranking-hero">
+  <div><p class="eyebrow">{{ if $context.IsHome }}GITHUB TRENDING{{ else }}历史{{ $page.Params.periodLabel }}{{ end }} <span class="meta-divider">/</span> <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2006.01.02" }}</time></p>
+  <h1>{{ if $context.IsHome }}最新{{ else }}{{ end }}{{ $page.Params.periodLabel }} · {{ $page.Date.Format "2006.01.02" }}</h1><p class="ranking-intro">{{ $page.Title }}</p></div>
+  <div class="collected"><span class="status-dot" aria-hidden="true"></span><span>采集于 <time datetime="{{ $page.Params.collectedAt }}">{{ time.Format "01-02 15:04" (time.In "Asia/Shanghai" (time.AsTime $page.Params.collectedAt)) }}</time> 北京时间<br><a href="{{ $page.Params.sourceUrl }}">查看原始榜单 ↗</a></span></div>
+</section>
+<div class="section-bar ranking-bar">{{ partial "nav.html" $context }}<div class="ranking-stats"><span><strong>{{ len $projects }}</strong> 个项目</span><span><strong>+{{ lang.FormatNumber 0 $stars }}</strong> 本期增星</span><span><strong>{{ len $languages }}</strong> 种语言</span></div></div>
+<div class="filter-bar" aria-label="筛选本期项目">
+  <div class="search-field"><label for="search">{{ partial "icon.html" "search" }}搜索项目</label><input id="search" type="search" placeholder="项目名称、中文简介或关键词…" autocomplete="off" aria-controls="projects"></div>
+  <div><label for="language">语言</label><select id="language" aria-controls="projects"><option value="">全部语言</option>{{ range $languages }}<option value="{{ . }}">{{ . }}</option>{{ end }}</select></div>
+  <div><label for="category">分类</label><select id="category" aria-controls="projects"><option value="">全部分类</option>{{ range $categories }}<option value="{{ . }}">{{ . }}</option>{{ end }}</select></div>
+  <div><label for="sort">排序</label><select id="sort" aria-controls="projects"><option value="rank">官方顺序</option><option value="stars">本期增星最多</option><option value="name">项目名称 A–Z</option></select></div>
+</div>
+<div class="results-bar"><span id="count" role="status">{{ len $projects }} 个项目</span><button type="button" id="reset-filters" hidden>重置筛选</button><span class="order-note">排名保留官方序号</span></div>
+<div class="ranking-table">
+<div class="projects" id="projects">{{ range $projects }}
+<article class="project" data-project data-search="{{ .repo }} {{ .title }} {{ .features }} {{ .category }} {{ .language }}" data-language="{{ .language }}" data-category="{{ .category }}" data-rank="{{ .rank }}" data-stars="{{ .stars }}" data-name="{{ .repo }}">
+  <div class="rank" aria-label="官方排名 {{ .rank }}">{{ printf "%02d" (int .rank) }}</div>
+  <div class="project-body">
+  {{ $owner := index (split .repo "/") 0 }}{{ $repoMetrics := index site.Data.repo_metrics .repo }}
+  <span class="repo-avatar"><span aria-hidden="true">{{ upper (substr $owner 0 1) }}</span>{{ with $repoMetrics.avatarUrl }}<img src="{{ . }}&amp;s=64" alt="{{ $owner }} 的头像" width="36" height="36" loading="lazy" decoding="async" referrerpolicy="no-referrer">{{ end }}</span>
+  <div class="project-head"><a class="repo" href="{{ .url }}">{{ .repo }} {{ partial "icon.html" "external" }}</a>{{ if .isNew }}<span class="new-label">新上榜</span>{{ end }}</div>
+  <h2>{{ .title }}</h2><p class="project-description">{{ .features }}</p>
+  <div class="project-bottom"><div class="tags"><span>{{ .category }}</span></div></div>
+  </div>
+  {{ partial "project-metrics.html" (dict "project" . "page" $page) }}
+  <div class="stars">+{{ lang.FormatNumber 0 .stars }}<small>本期增星</small></div>
+  <details class="project-details"><summary><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m6 3 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="detail-closed">了解项目</span><span class="detail-open">收起详情</span><span class="detail-hint">用途、部署与注意事项</span></summary>
+  <div class="project-detail-panel"><dl><div class="project-overview-section"><dt>项目概况</dt><dd>{{ .overview | default .features }}</dd></div><div><dt><span>01</span> 如何使用</dt><dd>{{ .deployment }}</dd></div><div><dt><span>02</span> 适用场景</dt><dd>{{ .reason }}</dd></div><div><dt><span>03</span> 限制与注意</dt><dd>{{ .caution }}</dd></div></dl><a class="detail-source" href="{{ .url }}">官方仓库与说明 {{ partial "icon.html" "external" }}</a></div></details>
+</article>{{ end }}</div></div>
+<div class="empty search-empty" id="empty" hidden><h2>没有找到匹配项目</h2><p>试试其他关键词，或清除语言与分类限制。</p><button type="button" id="clear-search">清除所有筛选</button></div>
+<details class="metrics-note"><summary>指标口径与采集时间</summary><p>总 Star、Fork 和增长率优先采用已逐项核对项目、排名与增星数的同一期历史快照。增长率 = 本期增星 ÷（同期总 Star − 本期增星）。以下保留快照的实际时间，与本站核验时间分别记录。增星趋势连接最近最多 7 期已收录日榜，缺失日期不补值。头像为仓库所属用户或组织的当前头像。</p>
+<ul>{{ range $projects }}{{ $repo := .repo }}{{ $metrics := index site.Data.repo_metrics .repo }}{{ with .metrics }}{{ $metrics = dict "sourceUrl" .sourceUrl "collectedAt" .collectedAt }}{{ end }}{{ with $metrics }}<li><a href="{{ .sourceUrl }}">{{ $repo }}</a><time datetime="{{ .collectedAt }}">{{ time.Format "2006-01-02 15:04:05" (time.In "Asia/Shanghai" (time.AsTime .collectedAt)) }} 北京时间</time></li>{{ end }}{{ end }}</ul></details>
+<details class="collection-note"><summary>采集说明与数据边界</summary><p>{{ $page.Params.note }}</p></details>
+<div class="prose">{{ $page.Content }}</div>
+<div class="ranking-footer"><span>以上数据为采集时的快照，非实时排名。</span><a href="{{ "archives/" | relURL }}">查看历史归档 ↗</a></div>

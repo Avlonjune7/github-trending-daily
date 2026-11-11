@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section class="hero reading-hero"><p class="eyebrow">编辑推荐 · 值得一读</p><h1>精选阅读</h1><p class="hero-description">从科技观察到开源实践，留一点时间，读懂热度之外的价值。</p></section>
+<div class="section-bar">{{ partial "nav.html" . }}<span class="archive-count">{{ len site.Data.reading }} 期收录</span></div>
+<div class="reading-grid">{{ range sort site.Data.reading "date" "desc" }}
+<article class="reading-card">
+  <div class="reading-cover {{ .style }}" aria-hidden="true"><span>{{ if eq .style "weekly" }}科技爱好者周刊{{ else }}HelloGitHub{{ end }}</span><strong>{{ .issue }}</strong><span>第 {{ .issue }} 期</span></div>
+  <div class="reading-body"><div class="reading-meta"><a href="{{ .source }}">{{ .publication }}</a><time datetime="{{ .date }}">{{ time.Format "2006.01.02" .date }}</time></div>
+  <h2><a href="{{ .url }}">{{ .title }}</a></h2><p>{{ .summary }}</p><div class="tags">{{ range .tags }}<span>{{ . }}</span>{{ end }}</div><a class="read" href="{{ .url }}" aria-label="阅读 {{ .publication }} 第 {{ .issue }} 期原文">阅读原文 {{ partial "icon.html" "external" }}</a></div>
+</article>{{ end }}</div>
+<div class="archive-note"><span>关于精选阅读</span><p>这里收录期刊原文入口与简要导读，日期为原刊发布日期。榜单排名请查看日榜、周榜或月榜。</p></div>
+{{ end }}
