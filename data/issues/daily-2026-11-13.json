@@ -1,0 +1,221 @@
+{
+  "id": "daily-2026-11-13",
+  "period": "daily",
+  "date": "2026-11-13",
+  "collectedAt": "2026-11-12T18:10:55.858400+00:00",
+  "title": "GitHub 热榜日报 · 官方前十",
+  "sourceUrl": "https://github.com/trending?since=daily",
+  "note": "北京时间2026-11-13 02:10读取官方Trending日榜，保留完整前10名与原始顺序；stars为页面当时显示的stars today，并非北京时间自然日结算。跨日期重复上榜正常保留。没有取得符合本期日期与数值约束的同期历史快照，省略metrics，增长率保持缺失，不以当前总Star估算。新增“设备工具”分类用于设备功能配置类项目。项目介绍按官方README核验，未逐项安装实测。",
+  "projects": [
+    {
+      "title": "现代 Web 开发指导",
+      "category": "开发工具",
+      "language": "TypeScript",
+      "features": "为编码智能体补充现代浏览器能力与兼容性知识，减少过时的前端实现。",
+      "overview": "这是 Modern Web Guidance 的源码仓库，提供指导内容的编写、校准和评估工具。它把现代 CSS、浏览器原生交互、性能与无障碍知识整理成可检索技能，帮助编码智能体选择较新的平台能力，并在需要时采用轻量回退方案。",
+      "deployment": "通过官方 npm CLI 启动交互安装向导，也可先搜索指导、读取条目或扫描旧模式。适合接入现有编码智能体，无需把此源码仓库当成业务组件库。",
+      "reason": "适合前端开发者更新旧页面，尤其是希望让 AI 减少不必要脚本、改用原生弹窗或现代布局的场景。应结合目标浏览器验证。",
+      "caution": "资料覆盖前沿能力，不能保证所有用户浏览器均支持。使用前检查兼容性和回退行为；本项目是指导与评估工具，并非自动验证完整业务正确性的系统。",
+      "repo": "GoogleChrome/modern-web-guidance-src",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "rank": 1,
+      "stars": 799,
+      "contentSources": [
+        {
+          "url": "https://github.com/GoogleChrome/modern-web-guidance-src/blob/main/README.md",
+          "sha": "d130c0043c81edb4dc74c8bb279c625a591fc6ac"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.806945+00:00"
+    },
+    {
+      "title": "代码安全扫描与修复",
+      "category": "安全与隐私",
+      "language": "TypeScript",
+      "features": "以 CLI、SDK 和自动化工作流检查代码漏洞，核验发现并辅助生成修复。",
+      "overview": "Codex Security 支持按仓库、路径或 Git 变更扫描代码，进一步核验候选漏洞、生成补丁和检查已有修复。它保留带来源证据的报告，也提供发现去重、威胁模型及 SARIF、JSON 等导出能力，便于将审查结果接入开发流程。",
+      "deployment": "按 README 准备受支持的 Node.js 与 Python 3.10+，安装 npm CLI 并登录后从仓库目录开始扫描。已有 TypeScript 项目可使用 SDK，CI 需单独配置凭据。",
+      "reason": "适合维护者检查认证、授权等高风险变更，或对多个组件开展范围明确的代码审查。建议先从较小路径开始，阅读证据和覆盖限制再决定修复。",
+      "caution": "扫描不是安全保证，补丁仍需审查与测试。模型调用可能产生费用，部分安全能力需要相应访问资格；预算估计不能当成绝对费用上限。",
+      "repo": "openai/codex-security",
+      "url": "https://github.com/openai/codex-security",
+      "rank": 2,
+      "stars": 663,
+      "contentSources": [
+        {
+          "url": "https://github.com/openai/codex-security/blob/main/README.md",
+          "sha": "c30adfcdb1b8c61c6051d14f6fad8fe1ea90d81a"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.744747+00:00"
+    },
+    {
+      "title": "按项目切换 Node.js 版本",
+      "category": "开发工具",
+      "language": "Shell",
+      "features": "在用户级 Shell 环境安装和切换多个 Node.js 版本，管理不同项目的运行需求。",
+      "overview": "nvm 是以 Shell 脚本实现的 Node.js 版本管理器，按用户安装、在具体 Shell 中加载。开发者可安装多个版本并切换当前环境，配合项目的版本约定减少旧项目与新工具之间的运行时冲突，而不必不断替换系统级 Node。",
+      "deployment": "先按官方安装文档配置支持的 Shell，重新加载后安装需要的 Node 版本，再使用版本切换命令。项目可通过 .nvmrc 记录所需版本。",
+      "reason": "适合维护多个前端或服务端项目的开发者，例如同一台机器分别运行不同 Node 版本的旧应用与新构建工具。",
+      "caution": "支持 POSIX Shell、Unix、macOS 及 Windows WSL，不等同于原生 Windows 的版本管理器。安装会涉及 Shell 配置；切换后应检查实际 Node 路径及全局包。",
+      "repo": "nvm-sh/nvm",
+      "url": "https://github.com/nvm-sh/nvm",
+      "rank": 3,
+      "stars": 107,
+      "contentSources": [
+        {
+          "url": "https://github.com/nvm-sh/nvm/blob/master/README.md",
+          "sha": "765e99c89ef60010f156659c8026fd06f3e6e17f"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.696903+00:00"
+    },
+    {
+      "title": "Apple Watch 表盘实验工具",
+      "category": "设备工具",
+      "language": "Objective-C",
+      "features": "用于启用 Hermès 表盘的 Apple Watch 工具，当前版本仅支持明确列出的 watchOS 范围。",
+      "overview": "HermesEnabler 是面向 Apple Watch 的表盘启用工具。当前 README 描述 HermesEnabler 2，提供 IPA 安装和 Xcode 构建两种入口，并要求在手表应用中按步骤操作。它依赖特定系统版本，涉及设备配置与备份，不是通用的表盘设计或商店应用。",
+      "deployment": "先核对官方支持的 watchOS 版本，再按文档选择 IPA 侧载或 Xcode 构建，并在手表端按应用提示操作。此处仅介绍项目，未实际安装或修改设备。",
+      "reason": "适合了解 Apple Watch 系统机制、能自行备份和恢复的实验用户。日常主力设备或不愿处理兼容问题的用户，不宜仅凭热度尝试。",
+      "caution": "官方仅支持 watchOS 27.0 至27.3 beta 1，并明确自担风险。更新须保持相同 Bundle Identifier 与 Apple ID；卸载前应通过应用恢复 MobileGestalt 备份。",
+      "repo": "pookjw/HermesEnabler",
+      "url": "https://github.com/pookjw/HermesEnabler",
+      "rank": 4,
+      "stars": 390,
+      "contentSources": [
+        {
+          "url": "https://github.com/pookjw/HermesEnabler/blob/main/README.md",
+          "sha": "9097b66aa2f1e7695ee48cdfff0ce6d7543fc61a"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.763006+00:00"
+    },
+    {
+      "repo": "we-promise/sure",
+      "title": "可自托管的个人财务应用",
+      "category": "金融工具",
+      "language": "Ruby",
+      "features": "可自行部署的个人财务应用，用于整理资产、收支和财务记录。",
+      "deployment": "可按官方自托管指南部署，开发环境需要 Ruby、PostgreSQL 和 Redis。先使用示例数据启动并熟悉流程，再决定是否导入真实账目或接入外部服务。",
+      "reason": "适合愿意维护个人财务系统、希望掌控数据存放位置的用户。例如先用测试账目评估资产与收支展示，确认导入流程符合需求后再迁移数据。",
+      "caution": "自托管不代表免维护，需要备份数据库并保护财务数据。可选 AI 与第三方服务可能有独立费用或配置要求，不能将软件输出等同于专业建议。",
+      "url": "https://github.com/we-promise/sure",
+      "rank": 5,
+      "stars": 974,
+      "overview": "Sure 是从 Maybe Finance 延续而来的社区项目，提供个人财务与财富管理应用。它把财务数据汇集到可自行掌控的服务中，并提供可选的 AI 相关能力。相比研究一个独立数据脚本，它更适合观察完整财务应用的界面、数据组织和日常维护方式。",
+      "contentSources": [
+        {
+          "url": "https://github.com/we-promise/sure/blob/main/README.md",
+          "sha": "35f5c2e0681b8ef1c55545a5846535e8198ce4c8"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.775336+00:00"
+    },
+    {
+      "title": "多入口 AI 编程助手",
+      "category": "开发工具",
+      "language": "TypeScript",
+      "features": "提供终端、编辑器和桌面等入口的开源编码智能体，支持多模型协议与工具集成。",
+      "overview": "Qwen Code 将代码理解、编辑及智能体工作流带入开发环境，支持技能、子智能体、MCP 和多种模型接口。除终端外，官方还提供编辑器、桌面与聊天集成，以及 SDK 和无界面运行方式；不同入口可服务个人开发或已有自动化流程。",
+      "deployment": "npm 安装需要 Node.js 22+，也可按官方平台安装方式准备工具。在项目目录启动后选择账户订阅登录或配置模型提供商，先用代码解释任务验证连接。",
+      "reason": "适合希望在现有代码库中使用多模型编码助手的开发者。例如先理解模块，再执行小范围修改和测试；也可通过 SDK 接入已有工作流。",
+      "caution": "模型订阅或 API 可能有费用，代码操作需审阅。Web/Daemon 仍标实验性质，默认本机服务的权限很大，共享主机应按官方说明启用认证，勿随意对外暴露。",
+      "repo": "QwenLM/qwen-code",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "rank": 6,
+      "stars": 151,
+      "contentSources": [
+        {
+          "url": "https://github.com/QwenLM/qwen-code/blob/main/README.md",
+          "sha": "83b7e8673c2b2c4a5c12bd4bd408a0f95ee685e2"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.632344+00:00"
+    },
+    {
+      "title": "原生本地模型推理引擎",
+      "category": "AI 与智能体",
+      "language": "Zig",
+      "features": "以 Zig 原生程序在 Apple Silicon 和 NVIDIA GPU 上提供模型推理及兼容接口。",
+      "overview": "TensorFold 直接读取模型检查点、处理分词，并运行 Metal 或 CUDA 内核。核心服务不依赖 Python 或 MLX 安装，提供聊天及其他兼容 API，也包含本地模型选择与交互入口。它适合研究从模型文件到本地服务的轻量原生推理路径。",
+      "deployment": "Apple Silicon 可按官方 Homebrew 方式安装；Linux NVIDIA 使用对应架构发行包并核对驱动要求。先下载官方列出的已验证小模型，再启动服务并发出测试请求。",
+      "reason": "适合希望在自己的 Mac 或 GPU 主机运行模型、又想复用兼容 API 的开发者。先验证目标模型与硬件组合，再考虑接入现有聊天或编码客户端。",
+      "caution": "模型权重有独立许可，显存需求还受上下文与并发影响。Linux CUDA 发行包要求较新驱动；部分模型和GPU组合未经过完整运行验证，实验功能不可视为稳定承诺。",
+      "repo": "ashhart/TensorFold",
+      "url": "https://github.com/ashhart/TensorFold",
+      "rank": 7,
+      "stars": 94,
+      "contentSources": [
+        {
+          "url": "https://github.com/ashhart/TensorFold/blob/main/README.md",
+          "sha": "33840f0b8dce50de1bd3dc5fd4f80caaf6d57b4f"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.708090+00:00"
+    },
+    {
+      "title": "JavaScript 服务端运行时",
+      "category": "开发工具",
+      "language": "JavaScript",
+      "features": "用于浏览器之外执行 JavaScript 的运行时，支撑网络服务、命令行和构建工具。",
+      "overview": "Node.js 是面向通用开发的 JavaScript 运行时。官方仓库维护运行时源码、构建说明与不同发布线，开发者通常使用官方二进制或安装包运行应用，也可参与底层实现。它是众多服务端应用和前端工具链的基础，而非具体业务框架。",
+      "deployment": "从官方渠道选择适合平台的受支持版本，生产环境优先评估 LTS，再按应用要求安装依赖与运行脚本。只有需要开发运行时本身时才按 BUILDING.md 编译源码。",
+      "reason": "适合构建网络服务、脚本工具或运行前端构建链。维护老项目时应先核对版本支持范围与依赖兼容性，而不是直接追随最新开发分支。",
+      "caution": "不同发布线的稳定性和支持周期不同。官方指出 Alpha、Current 主要面向库作者与CI，Nightly未经过同等级验证；升级前应运行项目测试并关注安全更新。",
+      "repo": "nodejs/node",
+      "url": "https://github.com/nodejs/node",
+      "rank": 8,
+      "stars": 133,
+      "contentSources": [
+        {
+          "url": "https://github.com/nodejs/node/blob/main/README.md",
+          "sha": "3b7d93827ae99ff451a4ff9016dbd254cd5776b8"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.776916+00:00"
+    },
+    {
+      "repo": "addyosmani/agent-skills",
+      "title": "AI 编程的规格、测试与审查流程",
+      "category": "开发工具",
+      "language": "JavaScript",
+      "features": "将需求、实现、测试与审查整理为可组合的 AI 编程技能。",
+      "deployment": "可使用官方 README 列出的 skills CLI 或宿主插件入口安装。先查看技能清单，选择当前任务需要的部分；安装后按宿主说明调用相应技能或命令。",
+      "reason": "适合已有代码库需要加强测试和审查的团队。例如修复一个功能前先明确验收条件，再完成实现、运行测试并进行代码审查，避免任务直接跳到交付。",
+      "caution": "不同宿主的命令与插件支持不同，不能照搬所有入口。技能属于流程指引，不会自动证明软件可用于生产；测试、权限与发布审批仍需实际落实。",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "rank": 9,
+      "stars": 812,
+      "overview": "这套技能把软件开发拆成规格、计划、构建、测试、审查和发布等阶段，并为各阶段提供对应的操作流程。它关注的不只是生成代码，还包括先明确要求、按小步骤实现、通过测试证明结果以及提交前检查质量，适合补全 AI 编程中的工程纪律。",
+      "contentSources": [
+        {
+          "url": "https://github.com/addyosmani/agent-skills/blob/main/README.md",
+          "sha": "7f610b8ca80ff9bc7ba7f95f3209430c3481891d"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.745344+00:00"
+    },
+    {
+      "repo": "meta/astryx",
+      "title": "React 设计系统与组件库",
+      "category": "前端与设计",
+      "language": "TypeScript",
+      "stars": 1789,
+      "rank": 10,
+      "features": "面向 React 的组件与主题系统，帮助统一产品界面和交互。",
+      "deployment": "需要 React 19 或更高版本。按官方入门安装核心包、主题及其依赖，导入预构建 CSS，再使用组件；已有项目可从单个页面接入，不必直接替换全站。",
+      "reason": "适合希望统一多个管理页面的 React 团队。例如先把新增的用户管理页做成统一表格与表单，再评估主题和交互是否适合其他页面。",
+      "caution": "目前为 Beta，图表相关包仍有仅提供 canary 的情况。它不是 Vue 组件库；接入前需检查 React 版本、组件接口与发布状态。",
+      "url": "https://github.com/meta/astryx",
+      "overview": "Astryx 是面向 React 的开源设计系统，将界面组件、品牌主题、深色模式、页面模板和 CLI 放在同一套工具中。开发者可以使用带类型定义的组件与预构建 CSS，减少从零设计表单、导航和数据页面的工作，也能让团队与 AI 助手依据同一套组件文档协作。",
+      "contentSources": [
+        {
+          "url": "https://github.com/meta/astryx/blob/main/README.md",
+          "sha": "29b89543395d69bd2a5385a9e768ec9bd9015f73"
+        }
+      ],
+      "contentCheckedAt": "2026-11-12T18:11:35.744251+00:00"
+    }
+  ]
+}

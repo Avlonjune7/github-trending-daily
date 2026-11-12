@@ -1,3 +1,4 @@
+timeZone = 'Asia/Shanghai'
 baseURL = 'https://avlonjune7.github.io/github-trending-daily/'
 languageCode = 'zh-CN'
 defaultContentLanguage = 'zh'
