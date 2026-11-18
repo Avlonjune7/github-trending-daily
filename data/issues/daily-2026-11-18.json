@@ -1,0 +1,225 @@
+{
+  "id": "daily-2026-11-18",
+  "period": "daily",
+  "date": "2026-11-18",
+  "collectedAt": "2026-11-18T10:02:26+08:00",
+  "title": "GitHub 热榜日报 · 官方前十",
+  "sourceUrl": "https://github.com/trending?since=daily",
+  "note": "北京时间 2026-11-18 10:02 读取 GitHub 官方 Trending 日榜，页面共显示 15 个条目，仅收录原始顺序前 10 名；stars 为页面当时显示的 stars today，并非北京时间自然日结算。跨日期重复上榜正常保留。未取得符合本期日期与数值约束的同期历史快照，省略 metrics，增长率保持缺失，不以当前总 Star 估算。分类均复用历史名称。项目介绍依据官方 README；未逐项安装实测。",
+  "projects": [
+    {
+      "title": "Claude BugHunter 安全测试技能",
+      "category": "安全与隐私",
+      "features": "为授权漏洞研究提供 Claude 技能、测试流程、证据整理与报告辅助工具。",
+      "overview": "Claude BugHunter 是面向漏洞赏金和外部红队工作的技能包，包含方法论、Web 漏洞测试主题、企业边界场景、验证关口和报告整理。它以技能和命令帮助研究者组织侦察、排查、复核及证据处理，并强调测试范围与授权。",
+      "deployment": "可在 Claude Code 中按 README 安装插件，或从仓库复制技能与命令；普通技能也可安装到其他支持相同格式的代理。先明确书面授权范围，再按使用指南建立测试记录。",
+      "reason": "适合已有授权的安全研究者梳理 Web 目标的测试计划，或对漏洞发现建立复核与报告流程。公共训练靶场可用来熟悉技能组织方式。",
+      "caution": "仅应对自有或获书面授权资产使用。项目有意排除内部横向移动等范围；技能并不能替代人工验证，部分平台模型的安全限制也可能影响合法测试流程。",
+      "language": "Python",
+      "contentCheckedAt": "2026-11-16T09:59:39+08:00",
+      "isNew": true,
+      "repo": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "rank": 1,
+      "stars": 1005,
+      "contentSources": [
+        {
+          "url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/README.md",
+          "sha": "4182889da32bba8e37c28e1d5bec4231bf5046db"
+        }
+      ]
+    },
+    {
+      "title": "/last30days 近期话题检索技能",
+      "category": "信息检索",
+      "features": "让编码智能体汇总近 30 天的社区与平台信号，并按互动数据整理简报。",
+      "overview": "/last30days 是供智能体调用的近期话题研究技能。它并行检索 Reddit、Hacker News、GitHub 等来源，并以互动信号筛选结果、生成简报；额外平台可通过首次运行的设置流程启用，还可用于热点发现和工具比较。",
+      "deployment": "Claude Code 可通过插件市场安装；Codex、Cursor 等 Agent Skills 宿主可用 npx skills add 安装。运行一次后按向导配置所需平台，并以 /last30days 加查询主题调用。",
+      "reason": "适合在会议、产品研究或技术选型前快速了解近 30 天的社区讨论与项目变化。",
+      "caution": "各平台的覆盖和可用性取决于账号、密钥、会话及第三方接口；互动量不等于事实准确性，重要结论应回看原帖。具体命令与设置行为以仓库中的技能规范为准。",
+      "repo": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "rank": 2,
+      "stars": 696,
+      "language": "Python",
+      "contentSources": [
+        {
+          "url": "https://github.com/mvanhorn/last30days-skill/blob/main/README.md",
+          "sha": "ee3f7f3b0f64f9ca996e579bfd2aa2383bace11b"
+        }
+      ],
+      "contentCheckedAt": "2026-11-18T10:03:03+08:00"
+    },
+    {
+      "title": "Open Code Review 代码审查",
+      "category": "开发工具",
+      "language": "Go",
+      "features": "读取 Git 差异并调用可配置大模型，生成定位到代码行的审查意见，也支持整文件扫描。",
+      "overview": "Open Code Review 是阿里巴巴开源的 AI 代码审查 CLI。它把 Git 变更交给具备工具调用能力的审查代理，代理可检索代码、读取完整文件并结合上下文提出逐行意见。除差异审查外，也提供对文件或目录的完整扫描，并可输出结构化结果。",
+      "deployment": "可安装官方 CLI 并配置模型服务，在仓库中审查工作区差异、分支或提交，也支持完整文件扫描。若不单独配置 OCR 模型服务，可按 README 在编码智能体中使用其技能与委托模式。",
+      "reason": "适合维护者在合并前检查较大的改动，或对陌生代码目录做初步审计。需要逐条复核模型建议，再交由测试和人工评审确认。",
+      "caution": "原生模式需要模型服务凭据，委托模式仍依赖宿主智能体的认证和额度；提交代码前须核对数据发送范围，审查意见仍需人工与测试复核。",
+      "contentCheckedAt": "2026-11-18T10:03:03+08:00",
+      "repo": "alibaba/open-code-review",
+      "url": "https://github.com/alibaba/open-code-review",
+      "rank": 3,
+      "stars": 763,
+      "contentSources": [
+        {
+          "url": "https://github.com/alibaba/open-code-review/blob/main/README.md",
+          "sha": "a5669f6323926276435f61c44fca26ba6b3df906"
+        }
+      ]
+    },
+    {
+      "title": "LoopForge 智能体开发工作空间",
+      "category": "开发工具",
+      "features": "在自托管工作空间中组织编码智能体、隔离沙盒和可复用 SOP，并设置人工审批。",
+      "overview": "LoopForge 是腾讯开源的自托管编码智能体协作平台。用户可在聊天中提出需求，由主智能体创建 Docker 工作空间、检出仓库、调用项目角色并产出 PR；重复工作还能整理为包含代理、脚本和人工关口的 SOP，保留运行日志与审批记录。",
+      "deployment": "按 README 克隆仓库并使用官方启动脚本部署，需 Docker、Compose、Python 3 等基础环境。启动后创建管理员账户，配置模型凭据与 GitHub 授权，再从内置 SOP 试运行。",
+      "reason": "适合想把需求、实现、审查和批准串成可重复流程的开发团队。例如把常见修复流程做成 SOP，逐步检查各节点产物后再合并。",
+      "caution": "默认服务监听所有接口，部署前应限制访问并创建管理员账户。Docker socket 允许控制宿主机守护进程，官方将默认方案定位于可信团队，不适合作为不受信任租户的隔离边界。",
+      "language": "Go",
+      "contentCheckedAt": "2026-11-16T09:59:39+08:00",
+      "isNew": true,
+      "repo": "Tencent/LoopForge",
+      "url": "https://github.com/Tencent/LoopForge",
+      "rank": 4,
+      "stars": 591,
+      "contentSources": [
+        {
+          "url": "https://github.com/Tencent/LoopForge/blob/main/README.md",
+          "sha": "8141eec354b8852ef67a908ef2547232a2e4bf9d"
+        }
+      ]
+    },
+    {
+      "title": "Univer Office SDK",
+      "category": "开发工具",
+      "language": "TypeScript",
+      "features": "提供可嵌入的开源表格与文档编辑基础，以及面向应用的内容模型和 API。",
+      "overview": "Univer 是构建办公编辑器的 SDK。仓库中的开源部分包含表格与文档编辑能力、公式和渲染引擎、插件体系、命令及撤销重做机制。开发者可把编辑界面嵌入自己的 Web 应用，也可在 Node.js 中利用内容模型处理快照和自动任务。",
+      "deployment": "可在使用 Vite 等打包器的浏览器项目中安装官方 Sheets Core preset，创建容器后初始化编辑器；需要无界面处理时参考 Node.js 指南。现有项目应按文档选择对应插件。",
+      "reason": "适合要在业务系统中嵌入电子表格或文档编辑、并用 API 读写内容的团队。例如给内部工具加入可编辑表格并保持计算与撤销能力。",
+      "caution": "仓库的开源核心采用 Apache-2.0，商业 Web 插件、Server SDK 与 AI 扩展另行许可；演示可能包含非开源功能。相关 @univerjs 包应使用兼容版本。",
+      "contentCheckedAt": "2026-11-17T10:06:01+08:00",
+      "repo": "dream-num/univer",
+      "url": "https://github.com/dream-num/univer",
+      "rank": 5,
+      "stars": 1774,
+      "contentSources": [
+        {
+          "url": "https://github.com/dream-num/univer/blob/dev/README.md",
+          "sha": "3244196198837cd4b1a8d4eb0d3350273af9a260"
+        }
+      ]
+    },
+    {
+      "title": "Arcane Docker 管理界面",
+      "category": "监控与运维",
+      "features": "提供面向 Docker 管理的可视化界面，项目主分支现为 v3。",
+      "overview": "Arcane 是面向 Docker 环境的管理项目，官方定位为让不同经验的用户使用现代化界面管理 Docker。仓库展示了 v3 仪表盘，并把安装、配置与开发指南集中在官方文档站。",
+      "deployment": "按 getarcane.app 官方文档选择部署方式并配置 Docker 环境；若需要旧版 2.x，应查看 release/2.x.x 分支，不应直接套用主分支说明。",
+      "reason": "适合希望通过图形界面管理 Docker 环境的个人或运维团队，例如日常查看和操作容器部署。",
+      "caution": "README 对功能和部署细节介绍较少，具体支持范围、权限配置及升级步骤须以官方文档为准；主分支是 v3，与 2.x 配置可能不同。",
+      "repo": "getarcaneapp/arcane",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "rank": 6,
+      "stars": 618,
+      "language": "Go",
+      "contentSources": [
+        {
+          "url": "https://github.com/getarcaneapp/arcane/blob/main/README.md",
+          "sha": "94063cc0583ae7b52e1d376c702a9fce852f6284"
+        }
+      ],
+      "contentCheckedAt": "2026-11-17T10:06:01+08:00"
+    },
+    {
+      "title": "Stitch 设计技能集",
+      "category": "前端与设计",
+      "features": "为编码智能体提供调用 Google Stitch 的设计、构建和辅助技能，连接设计与前端实现。",
+      "overview": "Stitch Design Skills 是围绕 Google Stitch 的智能体技能与插件集合，按设计、构建和辅助任务分组。它可让编码智能体生成或修改设计、把前端代码整理为 Stitch 设计，以及管理设计系统，再将结果用于前端组件工作流。",
+      "deployment": "可在 Codex 插件市场安装所需插件，也支持 Claude Code、Cursor 等代理的安装方式。使用前需按官方指南配置 Stitch MCP 服务和相应凭据；部分代理要手动安装技能。",
+      "reason": "适合已使用 Stitch 做页面原型、又希望让编码智能体参与设计迭代和组件实现的前端团队。例如先生成多个页面方案，再把选定设计接入项目。",
+      "caution": "技能依赖 Stitch MCP 及其授权，单独复制技能文件可能无法运行；选择性安装还需补齐依赖。不同代理的插件路径和命名要求不同，应先核对官方说明。",
+      "language": "TypeScript",
+      "contentCheckedAt": "2026-11-16T09:59:39+08:00",
+      "repo": "google-labs-code/stitch-skills",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "rank": 7,
+      "stars": 350,
+      "contentSources": [
+        {
+          "url": "https://github.com/google-labs-code/stitch-skills/blob/main/README.md",
+          "sha": "baecaabfa0fc08d596e3d5921479321eaacac02a"
+        }
+      ]
+    },
+    {
+      "title": "Cursor 官方插件仓库",
+      "category": "开发工具",
+      "features": "汇集 Cursor 官方及合作方的独立插件，连接常用开发工具、框架和服务。",
+      "overview": "这是 Cursor 的插件集合仓库。每个插件位于独立目录，并以 .cursor-plugin/plugin.json 描述自身；仓库按开发工具、生产力与集成等用途列出插件，供用户为编码智能体增添技能或外部服务连接。",
+      "deployment": "先在仓库插件列表中选择所需目录，查看该插件的说明和清单，再按 Cursor 插件安装方式接入。不同插件涉及的服务、账号与配置应分别核对。",
+      "reason": "适合已使用 Cursor 的开发者，按项目需要补充代码审查、文档或第三方工具能力。例如只选择与当前开发流程相关的插件。",
+      "caution": "仓库包含不同作者与第三方集成，权限、凭据、维护状态和费用各不相同；不能把列表中所有插件视作默认安装或无需配置。",
+      "repo": "cursor/plugins",
+      "url": "https://github.com/cursor/plugins",
+      "rank": 8,
+      "stars": 201,
+      "language": "TypeScript",
+      "contentSources": [
+        {
+          "url": "https://github.com/cursor/plugins/blob/main/README.md",
+          "sha": "ee488e42344cc6ec6bfed86ace1fb64d7f9eae9e"
+        }
+      ],
+      "contentCheckedAt": "2026-11-18T10:03:03+08:00",
+      "isNew": true
+    },
+    {
+      "title": "Superpowers 智能体开发工作流",
+      "category": "开发工具",
+      "features": "通过一组可组合技能规范编码智能体的需求澄清、规划、测试与交付流程。",
+      "overview": "Superpowers 是供编码智能体使用的软件开发方法与技能集合。它从需求澄清和设计确认开始，生成实施计划，再按任务执行、测试与审查；仓库提供适配不同智能体宿主的安装说明及对应技能库。",
+      "deployment": "根据所用宿主选择官方安装路径：Claude Code 可通过插件市场安装，Codex App 可在插件界面选择，其他 CLI 和代理按 README 分别配置。安装后由相关技能引导开发步骤。",
+      "reason": "适合希望让编码智能体按明确设计、任务计划和验证步骤推进较复杂开发的团队。例如先确认功能方案，再分任务实施和复核。",
+      "caution": "该流程强调设计确认和测试，实际耗时与上下文消耗取决于任务及宿主；不同宿主安装方式不同，不能把某平台命令直接用于其他平台。",
+      "repo": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "rank": 9,
+      "stars": 1917,
+      "language": "Shell",
+      "contentSources": [
+        {
+          "url": "https://github.com/obra/superpowers/blob/main/README.md",
+          "sha": "c5bb59fdaf17ba154e803c549cd71a73ef36c24b"
+        }
+      ],
+      "contentCheckedAt": "2026-11-18T10:03:03+08:00",
+      "isNew": true
+    },
+    {
+      "title": "AG-UI 智能体界面协议",
+      "category": "开发工具",
+      "language": "TypeScript",
+      "features": "以开放的事件协议连接 AI 智能体和用户界面，支持流式消息、状态同步及工具交互。",
+      "overview": "AG-UI 是面向智能体与用户界面的轻量事件协议。后端发送标准事件，前端接收流式消息、同步状态并展示结构化内容；协议还支持上下文与前端工具交互。仓库提供参考 HTTP 实现、连接器、SDK 与集成示例，便于不同框架接入。",
+      "deployment": "可从官方 create-ag-ui-app 脚手架建立示例应用，也可按快速入门将现有智能体后端和前端分别接入协议。实施前先核对所用框架在官方集成表中的支持状态。",
+      "reason": "适合已有智能体后端、需要在应用内展示实时执行过程和人机协作界面的开发者。例如把工具调用和状态变化流式传给前端。",
+      "caution": "它定义的是交互协议，不会自动提供模型、身份认证或完整业务界面。集成表中有进行中的适配；部署仍需自行处理传输、权限和错误恢复。",
+      "contentCheckedAt": "2026-11-17T10:06:01+08:00",
+      "repo": "ag-ui-protocol/ag-ui",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "rank": 10,
+      "stars": 1445,
+      "contentSources": [
+        {
+          "url": "https://github.com/ag-ui-protocol/ag-ui/blob/main/README.md",
+          "sha": "511991757bea32ccb96348a311469f0fd345c88b"
+        }
+      ]
+    }
+  ]
+}
