@@ -1,0 +1,221 @@
+{
+  "id": "daily-2026-11-27",
+  "period": "daily",
+  "date": "2026-11-27",
+  "collectedAt": "2026-11-27T10:02:05+08:00",
+  "title": "GitHub 热榜日报 · 官方前十",
+  "sourceUrl": "https://github.com/trending?since=daily",
+  "note": "北京时间 2026-11-27 10:02 读取 GitHub 官方 Trending 日榜，页面显示 16 个条目，仅收录原始顺序前 10 名；stars 为页面当时显示的 stars today，并非北京时间自然日结算。跨日期重复上榜正常保留。未取得符合本期日期与数值约束的同期历史快照，省略 metrics，增长率保持缺失，不以当前总 Star 估算。分类均复用历史名称。项目介绍依据官方 README；Claude BugHunter、Cursor Plugins 和 /last30days 的 README 本期有更新，已重新核验相关介绍。未逐项安装实测。",
+  "projects": [
+    {
+      "title": "Claude BugHunter 安全测试技能",
+      "category": "安全与隐私",
+      "features": "为授权漏洞研究提供 Claude 技能、测试流程、证据整理与报告辅助工具。",
+      "overview": "Claude BugHunter 是面向漏洞赏金和外部红队工作的技能包，包含方法论、Web 漏洞测试主题、企业边界场景、验证关口和报告整理。它以技能和命令帮助研究者组织侦察、排查、复核及证据处理，并强调测试范围与授权。",
+      "deployment": "可在 Claude Code 中按 README 安装插件，或从仓库复制技能与命令；普通技能也可安装到其他支持相同格式的代理。先明确书面授权范围，再按使用指南建立测试记录。",
+      "reason": "适合已有授权的安全研究者梳理 Web 目标的测试计划，或对漏洞发现建立复核与报告流程。公共训练靶场可用来熟悉技能组织方式。",
+      "caution": "仅应对自有或获书面授权资产使用。项目有意排除内部横向移动等范围；技能并不能替代人工验证，部分平台模型的安全限制也可能影响合法测试流程。",
+      "language": "Python",
+      "contentCheckedAt": "2026-11-27T10:02:50+08:00",
+      "repo": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "rank": 1,
+      "stars": 1597,
+      "contentSources": [
+        {
+          "url": "https://github.com/elementalsouls/Claude-BugHunter/blob/main/README.md",
+          "sha": "ea486ccf7a43c897f2724b835cb1e2d8b6d72c97"
+        }
+      ]
+    },
+    {
+      "title": "Superpowers 智能体开发工作流",
+      "category": "开发工具",
+      "features": "通过一组可组合技能规范编码智能体的需求澄清、规划、测试与交付流程。",
+      "overview": "Superpowers 是供编码智能体使用的软件开发方法与技能集合。它从需求澄清和设计确认开始，生成实施计划，再按任务执行、测试与审查；仓库提供适配不同智能体宿主的安装说明及对应技能库。",
+      "deployment": "根据所用宿主选择官方安装路径：Claude Code 可通过插件市场安装，Codex App 可在插件界面选择，其他 CLI 和代理按 README 分别配置。安装后由相关技能引导开发步骤。",
+      "reason": "适合希望让编码智能体按明确设计、任务计划和验证步骤推进较复杂开发的团队。例如先确认功能方案，再分任务实施和复核。",
+      "caution": "该流程强调设计确认和测试，实际耗时与上下文消耗取决于任务及宿主；不同宿主安装方式不同，不能把某平台命令直接用于其他平台。",
+      "repo": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "rank": 2,
+      "stars": 854,
+      "language": "Shell",
+      "contentSources": [
+        {
+          "url": "https://github.com/obra/superpowers/blob/main/README.md",
+          "sha": "c5bb59fdaf17ba154e803c549cd71a73ef36c24b"
+        }
+      ],
+      "contentCheckedAt": "2026-11-18T10:03:03+08:00"
+    },
+    {
+      "title": "CLI-Anything 软件命令行生成器",
+      "category": "开发工具",
+      "features": "用智能体工作流为现有软件生成可调用的命令行接口，并通过 CLI-Hub 查找已有工具。",
+      "overview": "CLI-Anything 旨在把桌面软件或现有代码库的功能包装成适合智能体调用的 CLI。项目既提供 CLI-Hub 以搜索、安装社区已有接口，也提供按阶段分析软件、生成命令与测试的技能流程，帮助智能体以可重复的命令操作原本偏图形界面的工具。",
+      "deployment": "若只需现有接口，可安装 cli-anything-hub，在 CLI-Hub 中查找并安装对应工具；生成新接口需 Python 3.10+、目标软件或源码，以及 README 列出的受支持编码智能体宿主。",
+      "reason": "适合希望让智能体自动操作已有软件的开发者，例如为有图形界面但缺少稳定命令行入口的工具建立可脚本化接口。",
+      "caution": "生成的 CLI 仍需审查和测试；有些接口依赖目标软件本体，安装 CLI 并不会自动提供 GIMP、Blender 等上游应用。不同宿主的插件安装方式也不同。",
+      "repo": "HKUDS/CLI-Anything",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "rank": 3,
+      "stars": 746,
+      "language": "Python",
+      "contentSources": [
+        {
+          "url": "https://github.com/HKUDS/CLI-Anything/blob/main/README.md",
+          "sha": "8a78b5420911eff5e7cc219bf1ecb2a12b562874"
+        }
+      ],
+      "contentCheckedAt": "2026-11-21T09:59:32+08:00"
+    },
+    {
+      "title": "MiniMind 极简语言模型教程",
+      "category": "AI 与智能体",
+      "features": "以原生 PyTorch 展示小型语言模型从数据准备、训练到推理的完整流程。",
+      "overview": "MiniMind 是面向学习和复现的轻量语言模型项目。仓库从模型结构与数据处理出发，提供预训练、监督微调、LoRA、偏好优化等代码，并配有模型权重、CLI 推理和可选 WebUI，帮助读者理解语言模型训练链路。",
+      "deployment": "按 README 安装 Python 依赖并下载对应模型权重后，可先用 CLI 运行推理；若要训练，再依步骤准备数据和 GPU 环境。WebUI 与第三方推理框架是可选路径。",
+      "reason": "适合想以可阅读代码学习模型结构和训练阶段的个人或教学团队，例如在有限计算资源下练习微调与推理流程。",
+      "caution": "README 的低成本、短时训练数字只针对指定硬件与 SFT 单轮实验，不代表完整训练链路的普遍成本；模型能力和适用任务应自行评估。",
+      "repo": "jingyaogong/minimind",
+      "url": "https://github.com/jingyaogong/minimind",
+      "rank": 4,
+      "stars": 702,
+      "language": "Python",
+      "contentSources": [
+        {
+          "url": "https://github.com/jingyaogong/minimind/blob/master/README.md",
+          "sha": "4855c40573426b85162b32f0652c427f8f237440"
+        }
+      ],
+      "contentCheckedAt": "2026-11-24T09:59:05+08:00"
+    },
+    {
+      "title": "Cursor 官方插件仓库",
+      "category": "开发工具",
+      "features": "汇集 Cursor 官方及合作方的独立插件，连接常用开发工具、框架和服务。",
+      "overview": "这是 Cursor 的插件集合仓库。每个插件位于独立目录，并以 .cursor-plugin/plugin.json 描述自身；仓库按开发工具、生产力与集成等用途列出插件，供用户为编码智能体增添技能或外部服务连接。",
+      "deployment": "先在仓库插件列表中选择所需目录，查看该插件的说明和清单，再按 Cursor 插件安装方式接入。不同插件涉及的服务、账号与配置应分别核对。",
+      "reason": "适合已使用 Cursor 的开发者，按项目需要补充代码审查、文档或第三方工具能力。例如只选择与当前开发流程相关的插件。",
+      "caution": "仓库包含不同作者与第三方集成，权限、凭据、维护状态和费用各不相同；不能把列表中所有插件视作默认安装或无需配置。",
+      "repo": "cursor/plugins",
+      "url": "https://github.com/cursor/plugins",
+      "rank": 5,
+      "stars": 270,
+      "language": "TypeScript",
+      "contentSources": [
+        {
+          "url": "https://github.com/cursor/plugins/blob/main/README.md",
+          "sha": "8447d807c64f80e90c39a68dbb12e0489dc43b86"
+        }
+      ],
+      "contentCheckedAt": "2026-11-27T10:02:50+08:00"
+    },
+    {
+      "title": "Firecrawl 网页数据采集工具",
+      "category": "信息检索",
+      "features": "将网页抓取、站点爬取和链接发现结果转成适合应用与智能体处理的内容。",
+      "overview": "Firecrawl 提供网页抓取与站点内容获取能力。仓库包含可在本机运行的 Firecrawl Local、可自托管的服务端及多种 SDK；本地版可输出 Markdown、爬取页面并发现链接，云服务另提供搜索和更高级的数据处理接口。",
+      "deployment": "轻量使用可按 README 安装 Firecrawl Local 并运行 scrape、crawl 或 map；也可调用托管服务。完整自托管服务需按指南部署 API、队列、数据库与浏览器等组件。",
+      "reason": "适合需要把公开网站内容导入知识库或智能体工作流的开发者，例如批量抓取文档站并转成可检索文本。",
+      "caution": "本地版的搜索及部分高级能力会使用云端；页面抓取失败时默认可回退云端，需按文档关闭云端调用以满足数据边界。动态页面还依赖本机浏览器。",
+      "repo": "firecrawl/firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "rank": 6,
+      "stars": 1046,
+      "language": "TypeScript",
+      "contentSources": [
+        {
+          "url": "https://github.com/firecrawl/firecrawl/blob/main/README.md",
+          "sha": "eaecfed6c8a76b16b4e8bcd5d499a473ece1cb11"
+        }
+      ],
+      "contentCheckedAt": "2026-11-21T09:59:32+08:00"
+    },
+    {
+      "title": "NGINX Web 服务器与反向代理",
+      "category": "网络工具",
+      "features": "提供 Web 服务、反向代理、负载均衡与内容缓存等基础网络能力。",
+      "overview": "NGINX 是开源 Web 服务器，也可作为反向代理、负载均衡器、API 网关和内容缓存。它通过配置文件定义监听、上游与请求处理规则，并以模块扩展功能，常用于把外部请求分配给后端应用。",
+      "deployment": "可按官方文档在 Linux、FreeBSD 或 Windows 安装发行版，配置站点和上游后先检查配置，再启动或重载服务；需要特殊模块时参考源码构建说明。",
+      "reason": "适合部署网站和应用入口的运维人员，例如为多个后端服务提供统一 HTTPS 入口并分配请求。",
+      "caution": "生产环境应逐项核对 TLS、代理头、访问控制和缓存策略；README 只是入门介绍，具体指令与平台差异须以官方完整文档为准。",
+      "repo": "nginx/nginx",
+      "url": "https://github.com/nginx/nginx",
+      "rank": 7,
+      "stars": 150,
+      "language": "C",
+      "contentSources": [
+        {
+          "url": "https://github.com/nginx/nginx/blob/master/README.md",
+          "sha": "d6761842c97dc151ae951f86e9738e0300f9db05"
+        }
+      ],
+      "contentCheckedAt": "2026-11-21T09:59:32+08:00"
+    },
+    {
+      "title": "OpenVINO 模型推理优化工具包",
+      "category": "AI 与智能体",
+      "features": "转换并优化深度学习模型，在 CPU、Intel GPU 与 NPU 等设备上部署推理。",
+      "overview": "OpenVINO 是用于优化和部署深度学习模型的开源工具包。它支持从 PyTorch、TensorFlow、ONNX 等生态导入模型，转换后编译到目标设备运行推理，覆盖视觉、语音及语言模型等任务，并提供 Python 包和示例。",
+      "deployment": "可按官方要求安装 openvino Python 包并验证版本，再参考示例把模型转换为 OpenVINO 格式、编译到支持的设备后运行推理；部署前核对系统与设备兼容表。",
+      "reason": "适合已有训练模型、希望在边缘设备或服务器上优化推理的开发者，例如将视觉模型部署到 Intel CPU 或 NPU 环境。",
+      "caution": "实际加速取决于模型、设备与精度配置，不能由仓库概述推断收益；项目包含可选择退出的使用数据收集，部署时应核对遥测和依赖要求。",
+      "repo": "openvinotoolkit/openvino",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "rank": 8,
+      "stars": 176,
+      "language": "C++",
+      "contentSources": [
+        {
+          "url": "https://github.com/openvinotoolkit/openvino/blob/master/README.md",
+          "sha": "7fa8d27f1e8f8e7d675aebc7a0a7c718c5b26d32"
+        }
+      ],
+      "contentCheckedAt": "2026-11-21T09:59:32+08:00"
+    },
+    {
+      "title": "Diagram Design 智能体制图技能",
+      "category": "前端与设计",
+      "features": "让智能体依照品牌风格生成可独立查看的 HTML 与 SVG 图解。",
+      "overview": "Diagram Design 是面向编码智能体的制图技能，可生成单文件 HTML 与 SVG 图解，并按品牌颜色、字体等约束调整视觉。仓库提供多种图解模式、示例图库，以及从其他图表格式导入和导出图片的工作流。",
+      "deployment": "在支持 Agent Skills 的宿主中可按 README 安装技能；Claude Code 和 Codex 也提供各自的插件安装路径。安装后先查看示例，再按指令描述图解内容与品牌样式。",
+      "reason": "适合需要把流程或架构整理成可分享视觉材料的设计和产品团队，例如在说明文档中制作与品牌一致的流程图。",
+      "caution": "输出是独立 HTML 与 SVG 文件，持续随代码频繁维护的图更适合可直接比对的文本方案；不同宿主安装路径和更新方式不同。",
+      "repo": "cathrynlavery/diagram-design",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "rank": 9,
+      "stars": 955,
+      "language": "HTML",
+      "contentSources": [
+        {
+          "url": "https://github.com/cathrynlavery/diagram-design/blob/main/README.md",
+          "sha": "887ac6e6fa0c7874b203a917d012f9a4df867331"
+        }
+      ],
+      "contentCheckedAt": "2026-11-25T10:03:05+08:00"
+    },
+    {
+      "title": "/last30days 近期话题检索技能",
+      "category": "信息检索",
+      "features": "让编码智能体汇总近 30 天的社区与平台信号，并按互动数据整理简报。",
+      "overview": "/last30days 是供智能体调用的近期话题研究技能。它并行检索 Reddit、Hacker News、GitHub 等来源，并以互动信号筛选结果、生成简报；查询公司时还可纳入专利和招聘页面，额外平台可通过首次运行的设置流程启用。",
+      "deployment": "Claude Code 可通过插件市场安装；Codex、Cursor 等 Agent Skills 宿主可用 npx skills add 安装。运行一次后按向导配置所需平台，并以 /last30days 加查询主题调用。",
+      "reason": "适合在会议、产品研究或技术选型前快速了解近 30 天的社区讨论与项目变化。",
+      "caution": "各平台的覆盖和可用性取决于账号、密钥、会话及第三方接口；互动量不等于事实准确性，重要结论应回看原帖。具体命令与设置行为以仓库中的技能规范为准。",
+      "repo": "mvanhorn/last30days-skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "rank": 10,
+      "stars": 759,
+      "language": "Python",
+      "contentSources": [
+        {
+          "url": "https://github.com/mvanhorn/last30days-skill/blob/main/README.md",
+          "sha": "aa8f48f89de2787778df09ac48b792f1dd4e169d"
+        }
+      ],
+      "contentCheckedAt": "2026-11-27T10:02:50+08:00"
+    }
+  ]
+}
